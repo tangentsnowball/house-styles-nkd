@@ -87,7 +87,7 @@ gulp.task('browser-sync', function() {
     gulp.watch(paths.styles.src + '*.less', ['styles']);
     gulp.watch(paths.scripts.src + '*.js', ['scripts']);
     gulp.watch(paths.images.src + '**/*', ['images']);
-    gulp.watch(paths.templates.src + '*.html').on('change', browserSync.reload);
+    gulp.watch('*.html').on('change', browserSync.reload);
 });
 
 /* Clean up stray files */
