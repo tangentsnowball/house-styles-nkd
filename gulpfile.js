@@ -33,6 +33,10 @@ function processCss(inputStream, taskType) {
     return inputStream
         .pipe(plugins.plumber())
         .pipe(plugins.less({ paths: [plugins.path.join(__dirname, 'less', 'includes')] }))
+        .pipe(plugins.autoprefixer({
+            browsers: ['last 3 versions', 'ie 9'],
+            cascade: false
+        }))
         .pipe(plugins.rename({suffix: '.min'}))
         .pipe(plugins.minifyCss())
         .pipe(gulp.dest(paths.styles.dest))
