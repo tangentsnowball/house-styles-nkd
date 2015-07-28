@@ -1,36 +1,33 @@
 <!DOCTYPE html>
 <html lang="en" id="site" class="nojs">
 <head>
-<!--[if lt IE 9]>
-<script src="static/js/vendor/html5shiv.js"></script>
-<![endif]-->
 
     <title>Tangent House Styles NKD</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="initial-scale=1.0">
 
-    <link rel="stylesheet" type="text/css" href="static/css/styles.css"/>
+    <link rel="stylesheet" type="text/css" href="static/dist/css/styles.min.css"/>
+
     <script>
         /* we want to remove the nojs class as soon as possible on page load */
         document.getElementById("site").className = document.getElementById("site").className.replace(/nojs/i,'');
     </script>
 </head>
 
-<!--[if lt IE 7 ]>				<body class="iex ie6"> <![endif]-->
-<!--[if IE 7 ]>					<body class="iex ie7"> <![endif]-->
-<!--[if IE 8 ]>					<body class="iex ie8"> <![endif]-->
-<!--[if IE 9 ]>					<body class="ie9"> <![endif]-->
-<!--[if (gt IE 9)|!(IE)]><!-->	<body> <!--<![endif]-->
-
+<body>
     <div class="container">
         <h1>You're good to go!</h1>
-        <p>If you're seeing this and running grunt, your server should be running on localhost:9000</p>
+        <p>If you're seeing this and running gulp, your server should be running on localhost:3000</p>
     </div>
+
 
     <!-- Grab Google-hosted jQuery. Fall back to locally saved file if necessary. -->
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <script>window.jQuery || document.write('<script src="static/js/vendor/jquery-1.10.2.min.js">\x3C/script>')</script>
-    <script src="static/js/dist/main.min.js"></script>
+    <!--[if lt IE 9 ]> 
+    <script>(function() {$('body').addClass('iex');})();</script>
+    <![endif]-->
+    <script src="static/dist/js/main.min.js"></script>
 
 </body>
 </html>
