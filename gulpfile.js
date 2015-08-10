@@ -56,6 +56,7 @@ gulp.task('less:responsive', function() {
 gulp.task('scripts', function() {
   return gulp.src(paths.scripts.src + '*.js')
     .pipe(plugins.plumber())
+    .pipe(plugins.newer(paths.scripts.dest))
     .pipe(plugins.jshint('.jshintrc'))
     .pipe(plugins.jshint.reporter('default'))
     .pipe(plugins.concat('main.js'))
@@ -70,6 +71,7 @@ gulp.task('scripts', function() {
 gulp.task('images', function() {
   return gulp.src(paths.images.src + '**/*')
     .pipe(plugins.plumber())
+    .pipe(plugins.newer(paths.images.dest))
     .pipe(plugins.cache(plugins.imagemin({ optimizationLevel: 3, progressive: true, interlaced: true })))
     .pipe(gulp.dest(paths.images.dest))
     .pipe(browserSync.stream())
