@@ -38,7 +38,7 @@ function processCss(inputStream, taskType) {
             cascade: false
         }))
         .pipe(plugins.rename({suffix: '.min'}))
-        .pipe(plugins.minifyCss())
+        .pipe(plugins.minifyCss({advanced:false}))
         .pipe(gulp.dest(paths.styles.dest))
         .pipe(browserSync.stream())
         .pipe(plugins.notify({ message: taskType + ' task complete' }));
@@ -79,7 +79,7 @@ gulp.task('images', function() {
 });
 
 /* BrowserSync */
-gulp.task('browser-sync', function() {
+gulp.task('browser-sync', ['styles', 'scripts', 'images'], function() {
     browserSync.init({
         server: {
             baseDir: "./"
@@ -104,5 +104,5 @@ gulp.task('clean', function(cb) {
 
 /* Default task */
 gulp.task('default', ['clean'], function() {
-    gulp.start('styles', 'scripts', 'images', 'browser-sync');
+    gulp.start('browser-sync');
 });
