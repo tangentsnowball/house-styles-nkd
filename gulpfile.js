@@ -71,7 +71,7 @@ gulp.task('scripts', function() {
 
 /* Images */
 gulp.task('images', function() {
-  return gulp.src(paths.images.src + '**/*')
+  return gulp.src([paths.images.src + '**/*.png',paths.images.src + '**/*.jpg',paths.images.src + '**/*.gif',paths.images.src + '**/*.svg'])
     .pipe(plugins.plumber())
     .pipe(plugins.bytediff.start())
     .pipe(plugins.newer(paths.images.dest))
