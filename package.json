@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/tangentsnowball/house-styles.git"
+    "url": "https://github.com/tangentsnowball/house-styles-nkd.git"
   },
   "devDependencies": {
     "browser-sync": "^2.8.0",
